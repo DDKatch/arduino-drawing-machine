@@ -11,10 +11,10 @@
 //Stepper stepper(20, 9, 11, 8, 10); // 8, 9, 10, 11 - пины
 //Ultrasonic ultrasonic(8, 9); // 8, 9 - пины
 
-int gyro_delay_time = 100; 
+int gyro_delay_time = 80; 
 float delta_drive_power = 0.022 * gyro_delay_time; //2.2
-float leftDrivePower = 70 - delta_drive_power;
-float rightDrivePower = 70 + delta_drive_power;
+float leftDrivePower = 70;
+float rightDrivePower = 70;
 float gyro_accuracy = (0.001251428 - 0.0002) * gyro_delay_time; //проверено эмпирически (отклонение за 1мсек = 0.001251428)
 
 int direction = 0;   // Текущее направление вращения     0 - вперед
