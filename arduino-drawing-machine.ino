@@ -1,23 +1,24 @@
 #include <Stepper.h>
 #include <Ultrasonic.h>
 
-#define D1 7          // Направление вращение двигателя 1
-#define M1 3          // ШИМ вывод для управления двигателем 1
+#define D1 7         // Направление вращение двигателя 1
+#define M1 5          // ШИМ вывод для управления двигателем 1
 #define D2 4          // Направление вращение двигателя 2
-#define M2 5          // ШИМ вывод для управления двигателем 2
+#define M2 3          // ШИМ вывод для управления двигателем 2
 
 #define SPEED 1400 // RPM
 
 //Stepper stepper(20, 9, 11, 8, 10); // 8, 9, 10, 11 - пины
 //Ultrasonic ultrasonic(8, 9); // 8, 9 - пины
 
-int gyro_delay_time = 80; 
-float delta_drive_power = 0.022 * gyro_delay_time; //2.2
+int gyro_delay_time = 100; 
+float delta_drive_power = 0.011 * gyro_delay_time; //2.2
 float leftDrivePower = 70;
 float rightDrivePower = 70;
 float gyro_accuracy = (0.001251428 - 0.0002) * gyro_delay_time; //проверено эмпирически (отклонение за 1мсек = 0.001251428)
 
-int direction = 0;   // Текущее направление вращения     0 - вперед
+int direction = 0;   // Текущее направление вращения    
+//                                  0 - вперед
 //                                  1 - назад
 int value;            // Текущее значение ШИМ
 
